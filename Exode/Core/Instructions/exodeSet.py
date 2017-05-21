@@ -1,4 +1,4 @@
-from . import InstructionSet, byte, long, float, signedLong
+from . import InstructionSet, byte, int, float, signedLong
 
 exodeInstructionSet = InstructionSet(name="Exode")
 
@@ -9,10 +9,10 @@ instructions = [
     [3,  "digitalSwitch",          byte],
     [4,  "analogWrite",            byte*2],
     [5,  "analogRead",             byte*2],
-    [6,  "addServo",               byte*2 + long],
+    [6,  "addServo",               byte*2 + int],
     [7,  "removeServo",            byte],
-    [8,  "writeServo",             byte + long],
-    [9,  "pulse",                  byte + long],
+    [8,  "writeServo",             byte + int],
+    [9,  "pulse",                  byte + int],
     [10, "pulseIn",                byte*2],
     [14, "checkExode",             []],
     [15, "addStepper",             byte*6],

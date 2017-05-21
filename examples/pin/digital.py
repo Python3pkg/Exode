@@ -22,7 +22,7 @@ print("read lvl pin 13:")
 
 pin.mode('INPUT')
 pin.read()
-print(pin._lvl)
+print((pin._lvl))
 
 # Emulate a fake button over the pin
 fake_button= DigPin(13,'OUTPUT')

@@ -20,7 +20,7 @@ class ExodeApp(App):
         self._keyboard = None
 
     def _on_keyboard_down(self, keyboard, keycode, text, modifiers):
-        for key in self.keyEvents.keys():
+        for key in list(self.keyEvents.keys()):
             if key == keycode[1]:
                 self.keyEvents[keycode[1]].call()
         return True

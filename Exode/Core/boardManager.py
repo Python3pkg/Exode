@@ -11,7 +11,7 @@ import itertools
 import platform
 from serial.tools import list_ports
 if platform.system() == 'Windows':
-    import _winreg as winreg
+    import winreg as winreg
 else:
     import glob
 
@@ -128,7 +128,7 @@ class Board(Exode):
         obj.on(self)
 
     def addObject(self, name, values):
-        if not name in self.objLst.keys():
+        if not name in list(self.objLst.keys()):
             self.objLst[name]= []
         self.objLst[name].append(values)
 

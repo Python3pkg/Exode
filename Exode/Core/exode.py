@@ -81,7 +81,7 @@ class ExodeSpeaker :
 
             # kwargs loop
             inst_id = len(args) - 1
-            for key, value in kwargs.items():
+            for key, value in list(kwargs.items()):
                 typed_arg.append((instruction_types[inst_id], args[inst_id]))
                 inst_id+= 1
 
@@ -136,7 +136,7 @@ class ExodeListener:
             value = int.from_bytes(self.port.read(4), byteorder='little', signed=False)
             logCore("listener-"+self.name+" got ["+str(key)+"]:"+str(value))
 
-            if key in self.listener.keys():
+            if key in list(self.listener.keys()):
                 self.listener[key].updateValue(value)
                 if not self.listener[key].isInfinite:
                     self.listener.pop(key)

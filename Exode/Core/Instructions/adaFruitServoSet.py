@@ -1,9 +1,9 @@
-from . import InstructionSet, byte, long
+from . import InstructionSet, byte, int
 
 adaFruitServoSet = InstructionSet(name="adaFruitServo")
 
 instructions = [
-    [0, "setAdaPWM", byte + long]
+    [0, "setAdaPWM", byte + int]
 ]
 
 for inst in instructions:

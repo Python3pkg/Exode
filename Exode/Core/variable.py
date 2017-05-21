@@ -31,7 +31,7 @@ _FUNCTIONS = {
     "checkExode":14
     }
     
-_INV_FUNCTIONS = {v: k for k, v in _FUNCTIONS.items()}
+_INV_FUNCTIONS = {v: k for k, v in list(_FUNCTIONS.items())}
 def ID(name):
     return _FUNCTIONS[name]
 

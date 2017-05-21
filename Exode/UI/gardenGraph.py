@@ -164,7 +164,7 @@ class Graph(Widget):
 
         mesh = self._mesh_rect
         mesh.vertices = [0] * (5 * 4)
-        mesh.indices = range(5)
+        mesh.indices = list(range(5))
 
         self._plot_area = StencilView()
         self.add_widget(self._plot_area)
@@ -947,7 +947,7 @@ class MeshLinePlot(Plot):
             del vert[4 * len(points):]
             del ind[len(points):]
         elif diff > 0:
-            ind.extend(range(len(ind), len(ind) + diff))
+            ind.extend(list(range(len(ind), len(ind) + diff)))
             vert.extend([0] * (diff * 4))
         for k in range(len(points)):
             vert[k * 4] = (funcx(points[k][0]) - xmin) * ratiox + size[0]
@@ -990,7 +990,7 @@ class MeshStemPlot(MeshLinePlot):
             del vert[4 * len(points):]
             del ind[len(points):]
         elif diff > 0:
-            ind.extend(range(len(ind), len(ind) + diff))
+            ind.extend(list(range(len(ind), len(ind) + diff)))
             vert.extend([0] * (diff * 4))
         for k in range(len(points)):
             vert[k * 8] = (funcx(points[k][0]) - xmin) * ratiox + size[0]
